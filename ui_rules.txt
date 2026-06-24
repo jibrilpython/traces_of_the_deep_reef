@@ -1,0 +1,42 @@
+1. DESIGN PHILOSOPHY
+Visual: "Oceanographic Survey" — the UI draws from the visual language of marine science documentation: the Challenger expedition report, the bathymetric chart with its careful depth soundings, the specimen ticket on a dredge sample jar. These instruments were deployed from research vessels in the open ocean, hauled back up through thousands of metres of water, and their readings were transcribed into logbooks that changed humanity's understanding of the planet. The app should feel like the archive those logbooks deserve: precise, deep-toned, and carrying the specific authority of naval science institutions.
+Mood: deep-ocean serious, expedition-weighted, cartographically precise, specimen-careful, institutionally authoritative.
+Important: No coral reef illustrations, no tropical ocean color associations, no marine wildlife motifs. The Negretti and Zambra reversing thermometer and the sounding lead were cold-water instruments deployed in the abyssal plain — the North Atlantic, the Southern Ocean, the deep Pacific trenches. The palette references those waters, not a Caribbean reef.
+
+2. COLORS
+#EFF2F5 — Main background (survey chart grey — the specific cool blue-grey of a hydrographic chart's background, the color of deep-ocean cartography paper under institutional lighting)
+#0B1520 — Primary text & high-contrast elements (abyssal black — the deepest, most ocean-specific near-black in the series, bluer than the deep water black of Echoes of the Abyss, referencing ink on a bathymetric chart)
+#FFFFFF — Secondary panels / card surfaces
+#5A6B7A — Secondary text / muted labels (deep water grey — cool, oceanic, like the color of the sea surface on an overcast expedition day)
+#1A6B8A — Primary accent (Challenger blue — the specific deep teal-blue of the HMS Challenger expedition reports, a Royal Society publication cover, an Admiralty hydrographic chart annotation. Scientific, deep, and unmistakably oceanic without being tropical)
+#DCE4EA — Outline / stroke / dividers (chart rule lines, cool blue-grey)
+#7A5C2E — Secondary accent (sounding lead bronze — the specific dark bronze of a cast-lead sounding weight after years of saltwater exposure, the aged brass of a Negretti thermometer frame. For era tags, material indicators, and expedition provenance badges)
+#C0392B — Critical errors only
+Important: Challenger blue is the most expedition-specific accent in the series — it references a precise historical color tradition, not a generic ocean blue. It is deeper and more teal than the waterworks blue of the Flow-Meter Flume, and less naval than the pressure blue of Echoes of the Abyss. Sounding lead bronze is darker and saltwater-aged compared to clean brass golds elsewhere in the series. The background carries the strongest blue cast of any app in the series — the hydrographic chart reference is load-bearing.
+
+3. TYPOGRAPHY
+Display / Headings: Libre Baskerville (weight 700) — returns from the Chronometer Balance, where it carried the authority of the Royal Observatory. Here it carries the authority of the Royal Society, the Challenger reports, and the Admiralty hydrographic office publications. At large sizes it reads like a chapter heading in a voyage of scientific discovery. Used for instrument names on detail views and the app title.
+Body / Descriptions: IBM Plex Sans (weight 300–400) — engineered and readable. For condition notes, expedition history, depth ratings, and all prose fields.
+Monospace / Identifiers: IBM Plex Mono — for archive codes like TDR-NEGZAM-REVTHERM-1876-GBR-CHALLENGER-088, depth ratings (0–5,500 m), temperature lock precision (± 0.05°C), and all structured technical fields.
+Important: Libre Baskerville at 24px and above only — below that its weight becomes oppressive on the cool light background. IBM Plex Sans handles all reading-size text. IBM Plex Mono for every depth value, temperature precision, and archive code — oceanographic measurements were taken at stations thousands of metres deep and recorded to four decimal places. The typography should carry that exactness.
+
+4. SURFACE & TEXTURE LANGUAGE
+
+Backgrounds: flat hydrographic chart grey — no ocean texture, no wave pattern, no noise
+Cards: pure white with a 1px border at #DCE4EA and 10px corner radius — specimen record cards, cool and scientific
+Depth sounding motif: each list card features a small SVG — a minimal vertical cross-section showing a water column with a depth marker line: a thin vertical blue line representing the wire, with a small weighted symbol at the bottom indicating the instrument type (a flat lead weight for sounding leads, a small rectangle for water sampling bottles, a circular disc for current meters, a paired thermometer symbol for reversing thermometers). The wire length is proportional to the instrument's maximum operating depth — a deep-sea instrument has a long wire, a surface instrument a short one. Rendered in Challenger blue for complete and operational instruments, sounding lead bronze for display condition. This is the most dimensionally vertical motif in the series — depth is the primary axis of oceanographic measurement, and the UI encodes it literally.
+Depth rating badge: each card shows the maximum operating depth in IBM Plex Mono — 0–200 m, 0–5,500 m, Abyssal — in a small cool-bordered pill. The single most important specification for any oceanographic instrument.
+Photography: instrument photography on white or very pale blue-grey — the thermometer reversal mechanism, sounding weight cavity, or bottle trigger assembly forward. For reversing thermometers, show the pair together. For sounding leads, show the tallow cavity open. No props.
+Expedition provenance tag: small pill showing the originating voyage or institution — HMS Challenger, Meteor Expedition, USFC Albatross, Discovery II — in Challenger blue at 10% opacity fill with full blue text
+
+
+5. INTERACTION PRINCIPLES
+
+Transitions: 240–280ms ease-out — the deepest, most patient transitions in the cool-background group. The ocean does not hurry.
+Selected state: Challenger blue left-border (3px) + faint #E8F2F8 background tint on active cards
+Empty states: NO SPECIMENS IN THIS ARCHIVE. in IBM Plex Mono, centered, deep water grey — one line
+Loading: a thin Challenger blue progress bar at screen top — slow and deliberate, like a sounding wire paying out
+Navigation: bottom tab bar — four tabs: Archive, Ocean Map, Logbook, Settings. Active tab in Challenger blue.
+Ocean zone filter: a first-class filter chip row — Epipelagic (0–200 m), Mesopelagic (200–1000 m), Bathypelagic (1000–4000 m), Abyssal (4000 m+) — because operating depth zone is the primary technical differentiator between oceanographic instruments and the first classification axis any marine scientist or expedition historian applies
+
+Important: The depth sounding SVG on each card is the most dimensionally literal motif in the entire series — a vertical wire with a weight at the bottom is the oldest oceanographic measurement act in history, unchanged from ancient Mediterranean lead lines to the Challenger expedition. Wire length is data. Challenger blue means the instrument is complete and deployment-ready. Sounding lead bronze means it lives in a display case. A collector should read the operating depth class from the wire length before reading a single number — the visual grammar of the deep sea, encoded in the simplest possible geometry.
