@@ -41,7 +41,10 @@ class _AddScreenState extends ConsumerState<AddScreen> {
     super.initState();
     _pageCtrl = PageController();
     final p = ref.read(inputProvider);
-    _registryCtrl = TextEditingController(text: p.oceanicRegistryLog);
+    final registryText = !widget.isEdit && p.oceanicRegistryLog.isEmpty
+        ? generateRegistryCode()
+        : p.oceanicRegistryLog;
+    _registryCtrl = TextEditingController(text: registryText);
     _hallmarkCtrl = TextEditingController(text: p.artisanHallmark);
     _eraCtrl = TextEditingController(text: p.era);
     _calibrationCtrl = TextEditingController(text: p.calibrationSite);
@@ -52,9 +55,11 @@ class _AddScreenState extends ConsumerState<AddScreen> {
     _expeditionCtrl = TextEditingController(text: p.expeditionGroundZero);
     _notesCtrl = TextEditingController(text: p.notes);
 
-    if (!widget.isEdit && _registryCtrl.text.isEmpty) {
-      _registryCtrl.text = generateRegistryCode();
-      ref.read(inputProvider).oceanicRegistryLog = _registryCtrl.text;
+    if (!widget.isEdit && p.oceanicRegistryLog.isEmpty) {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (!mounted) return;
+        ref.read(inputProvider).oceanicRegistryLog = registryText;
+      });
     }
   }
 
